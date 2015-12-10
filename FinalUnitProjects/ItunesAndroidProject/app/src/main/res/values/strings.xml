@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ItunesAndroidProject</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="search_button_txt">search</string>
+</resources>

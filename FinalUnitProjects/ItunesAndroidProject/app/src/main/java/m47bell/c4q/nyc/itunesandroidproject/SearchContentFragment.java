@@ -12,6 +12,7 @@ import android.widget.ListView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import m47bell.c4q.nyc.itunesandroidproject.Interface.ItunesService;
+import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 
 /**
@@ -40,11 +41,11 @@ public class SearchContentFragment extends Fragment {
             public void onClick(View view) {
                 
                 search_item = search_field.getText().toString();
-                search_item.replace('-','+');
+                search_item.replace('-', '+');
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(itunesApiUri)
-                        .build();
+                        .baseUrl(itunesApiUri).addConverterFactory(GsonConverterFactory.create()).build();
+
 
                 ItunesService service = retrofit.create(ItunesService.class);
             }
